@@ -6,7 +6,7 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 import { Button } from "bootstrap";
 
-onclick = function() {
+window.onload = function() {
   function excuseGenerator() {
     let who = ["The dog", "My grandma", "The mailman", "My bird"];
     let action = ["ate", "peed", "crushed", "broke"];
@@ -30,7 +30,10 @@ onclick = function() {
     return excuse;
   }
 
-  let paragraph = document.getElementById("excuse");
+  function changeText() {
+    let paragraph = document.getElementById("excuse");
+    paragraph.innerText = excuseGenerator();
+  }
 
-  paragraph.innerText = excuseGenerator();
+  document.getElementById("button").addEventListener("click", changeText);
 };
